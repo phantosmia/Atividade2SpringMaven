@@ -1,12 +1,11 @@
-package repository;
+package com.raquel.common.main.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-
-import model.Personagem;
+import com.raquel.common.main.model.Personagem;
 
 public interface PersonagemRepository extends CrudRepository<Personagem, Long>{
 	public Personagem findByNome(String nome);
@@ -15,8 +14,8 @@ public interface PersonagemRepository extends CrudRepository<Personagem, Long>{
 	
 	public List<Personagem> findByIdGreaterThan(Long id);
 	
-	public List<Personagem> findByAutorizacoesNome(String nome);
+	public List<Personagem> findByItensNome(String nome);
 	
-	@Query("select u from Personagem p where p.nome like %?1%")
+	@Query("select p from Personagem p where p.nome like %?1%")
 	public List<Personagem> buscaUsuario(String nome);
 }

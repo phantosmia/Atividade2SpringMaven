@@ -1,4 +1,4 @@
-package model;
+package com.raquel.common.main.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

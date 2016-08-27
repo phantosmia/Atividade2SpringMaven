@@ -1,4 +1,4 @@
-package model;
+package com.raquel.common.main.model;
 
 import java.util.List;
 

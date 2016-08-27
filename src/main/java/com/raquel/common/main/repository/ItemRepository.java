@@ -1,8 +1,8 @@
-package repository;
+package com.raquel.common.main.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import model.Item;
+import com.raquel.common.main.model.Item;
 
 
 
