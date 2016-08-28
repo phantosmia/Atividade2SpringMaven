@@ -26,6 +26,7 @@ public class App
 		PersonagemRepository personagemRepo = (PersonagemRepository) context.getBean("personagemRepository");
 		Item item1 = new Item();
 		item1.setNome("Espada Flamejante");
+		item1.setTipo("Espada");
 		itemRepo.save(item1);
 		Personagem personagem = new Personagem();
 		personagem.setNome("Alec");
