@@ -33,6 +33,14 @@ public class InventarioServiceImpl implements InventarioService{
 		personagemRepo.deleteAll();
 		itemRepo.deleteAll();
 	}
+	@Transactional
+	public void transacaoDeletePersonagem(Personagem personagem){
+		personagemRepo.delete(personagem);
+	}
+	@Transactional
+	public void transacaoDeleteItem(Item item){
+		itemRepo.delete(item);
+	}
 	/**
 	 * @param personagemRepo the personagemRepo to set
 	 */
