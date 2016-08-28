@@ -25,8 +25,13 @@ public class InventarioServiceImpl implements InventarioService{
 		personagem1.setClasse("Guerreiro");
 		Item item1 = new Item();
 		item1.setNome("Espada Flamejante");
-		item1.setNome("Espada");
+		item1.setTipo("Espada");
 		personagemRepo.save(personagem1);
+	}
+	@Transactional
+	public void transacaoDelete(){
+		personagemRepo.deleteAll();
+		itemRepo.deleteAll();
 	}
 	/**
 	 * @param personagemRepo the personagemRepo to set
