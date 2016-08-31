@@ -35,6 +35,7 @@ public class App
 		personagem.getItens().add(item1);
 		
 		personagemRepo.save(personagem);
+		
 		System.out.println("Id: " + personagem.getId());
 		System.out.println("Resultado da busca 1: " + personagemRepo.findByNome("Alec").getNome());
 		
@@ -51,20 +52,22 @@ public class App
 		for(Personagem p: personagemRepo.buscaUsuario("lec")) {
 			System.out.println("Usuario encontrado 3: " + p.getNome());
 		}
-		
+		InventarioService service2 = (InventarioService)context.getBean("inventarioService");
 		InventarioService service = (InventarioService)context.getBean("inventarioService");
-		
+		System.out.println(service.isItemRepoNull(itemRepo));
 		try {
 			service.transacaoSave();
+			service2.transacaoDelete();
 		}
 		catch(Exception e) {
 			
 			e.printStackTrace();
 		}
 		
-		personagemRepo.delete(personagem);
+		//personagemRepo.delete(personagem);
 
-		itemRepo.delete(item1);
+		//itemRepo.delete(item1);
+	
 
     }
 }
